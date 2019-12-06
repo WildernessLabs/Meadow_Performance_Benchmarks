@@ -12,7 +12,7 @@ Calculates pi (3.14159..) to [x] digits and records the amount of time it takes.
 
 | Operation          | **b3.5**    | **b3.6**    |
 |--------------------|-------------|-------------|
-| 50 digit Pi calc   | `1,0970ms`  |
+| 50 digit Pi calc   | `10,970ms`  |
 | 100 digit Pi calc  | `54,170ms`  |
 | 150 digit Pi calc  | `127,270ms` |
  
