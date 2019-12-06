@@ -30,4 +30,4 @@ writes to them.
 |------------------------|----------------|--------------|
 | Port initialization    | 2,670ms        |
 | 300 Port writes        | 4,760ms        |
-| Average time per write | 15.86667ms     |
+| Average time per write | 15.9ms         |
