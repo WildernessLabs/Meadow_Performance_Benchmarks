@@ -12,8 +12,9 @@ namespace Basic_Performance_Tests
         public MeadowApp()
         {
             Console.WriteLine("App Up");
-            ListOperations.RunIntegerListTests();
-            DigitalOutputOperations.RunDigitalOutputTests();
+            //ListOperations.RunIntegerListTests();
+            //DigitalOutputOperations.RunDigitalOutputTests();
+            SoftPwmPerformanceTests.RunSoftPwmTests();
         }
 
     }
