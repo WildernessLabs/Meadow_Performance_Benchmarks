@@ -8,7 +8,7 @@ This is primarily to track the progress of our performance improvements; Meadow 
 
 ### Pi Calculation
 
-Calculates pi (3.14159..) to [x] digits and records the amount of time it takes.
+Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time it takes.
 
 | Operation          | **b3.5**    | **b3.6**    |
 |--------------------|-------------|-------------|
@@ -45,4 +45,4 @@ the last frequency change that was noticeable.
 
 | Operation                        | **b3.5** | **b3.6** |
 |----------------------------------|----------|----------|
-| Maximum Frequency @ 50% duty     | ~`50hz`  |
+| Maximum Frequency @ `50%` duty   | ~`50hz`  |
