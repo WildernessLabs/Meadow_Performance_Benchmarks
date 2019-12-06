@@ -14,7 +14,10 @@ namespace Basic_Performance_Tests
             Console.WriteLine("App Up");
             //ListOperations.RunIntegerListTests();
             //DigitalOutputOperations.RunDigitalOutputTests();
-            SoftPwmPerformanceTests.RunSoftPwmTests();
+            //SoftPwmPerformanceTests.RunSoftPwmTests();
+            PiCalculationTests.CalculateTo(50);
+            PiCalculationTests.CalculateTo(100);
+            PiCalculationTests.CalculateTo(150);
         }
 
     }

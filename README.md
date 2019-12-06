@@ -8,8 +8,14 @@ This is primarily to track the progress of our performance improvements; Meadow 
 
 ### Pi Calculation
 
+Calculates pi (3.14159..) to [x] digits and records the amount of time it takes.
 
-
+| Operation          | Mark b3.5   | Mark b3.6    |
+|--------------------|-------------|--------------|
+| 50 digit Pi calc   | `1,0970ms`  |
+| 100 digit Pi calc  | `54,170ms`  |
+| 150 digit Pi calc  | `127,270ms` |
+ 
 ### List Operations
 
 Create a 1,000 item `List<int>`, and do perform basic list operations on it.
