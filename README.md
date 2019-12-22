@@ -12,9 +12,9 @@ Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time it ta
 
 | Operation          | **b3.5**    | **b3.6**    |
 |--------------------|-------------|-------------|
-| 50 digit Pi calc   | `10,970ms`  |
-| 100 digit Pi calc  | `54,170ms`  |
-| 150 digit Pi calc  | `127,270ms` |
+| 50 digit Pi calc   | `11s`       | `11s`       |
+| 100 digit Pi calc  | `54s`       | `54s`       |
+| 150 digit Pi calc  | `127s`      | `126s`      |
  
 ### List Operations
 
@@ -22,10 +22,10 @@ Create a 1,000 item `List<int>`, and do perform basic list operations on it.
 
 | Operation          | **b3.5**   | **b3.6**   |
 |--------------------|------------|------------|
-| List instantiation | `30ms`     |
-| List population    | `120ms`    |
-| List summation     | `130ms`    |
-| List clearing      | `58,500ms` |
+| List instantiation | `30ms`     | `30ms`     |
+| List population    | `120ms`    | `120ms`    |
+| List summation     | `130ms`    | `120ms`    |
+| List clearing      | `59s`      | `59s`      |
 
 ### Digital Output Port Operations
 
@@ -34,9 +34,9 @@ writes to them.
 
 | Operation              | **b3.5**  | **b3.6**  |
 |------------------------|-----------|-----------|
-| Port initialization    | `2,670ms` |
-| 300 Port writes        | `4,760ms` |
-| Average time per write | `15.9ms`  |
+| Port initialization    | `2.7s`    | `2.8s`    |
+| 300 Port writes        | `48s`     | `13s`     |
+| Average time per write | `15.9ms`  | `4.2ms`   |
 
 ### SoftPwmGeneration
 
@@ -45,4 +45,4 @@ the last frequency change that was noticeable.
 
 | Operation                        | **b3.5** | **b3.6** |
 |----------------------------------|----------|----------|
-| Maximum Frequency @ `50%` duty   | ~`50hz`  |
+| Maximum Frequency @ `50%` duty   | ~`50hz`  | ~`50hz`  |
