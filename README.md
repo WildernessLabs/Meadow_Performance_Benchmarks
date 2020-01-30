@@ -10,39 +10,39 @@ This is primarily to track the progress of our performance improvements; Meadow 
 
 Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time it takes.
 
-| Operation          | **b3.5**    | **b3.6**    |
-|--------------------|-------------|-------------|
-| 50 digit Pi calc   | `11s`       | `11s`       |
-| 100 digit Pi calc  | `54s`       | `54s`       |
-| 150 digit Pi calc  | `127s`      | `126s`      |
+| Operation          | **b3.5**    | **b3.6**    | **b3.7**    |
+|--------------------|-------------|-------------|-------------|
+| 50 digit Pi calc   | `11s`       | `11s`       | `2.3s`      |
+| 100 digit Pi calc  | `54s`       | `54s`       | `10.8s`     |
+| 150 digit Pi calc  | `127s`      | `126s`      | `14.4s`     |
  
 ### List Operations
 
 Create a 1,000 item `List<int>`, and do perform basic list operations on it.
 
-| Operation          | **b3.5**   | **b3.6**   |
-|--------------------|------------|------------|
-| List instantiation | `30ms`     | `30ms`     |
-| List population    | `120ms`    | `120ms`    |
-| List summation     | `130ms`    | `120ms`    |
-| List clearing      | `59s`      | `59s`      |
+| Operation          | **b3.5**   | **b3.6**   | **b3.7**   |
+|--------------------|------------|------------|------------|
+| List instantiation | `30ms`     | `30ms`     | `30ms`     |
+| List population    | `120ms`    | `120ms`    | `20ms`     |
+| List summation     | `130ms`    | `120ms`    | `30ms`     |
+| List clearing      | `59s`      | `59s`      | `7.7s`     |
 
 ### Digital Output Port Operations
 
 Initializes three `DigitalOutputPort` instances, one for each of the onboard LED components and 
 writes to them.
 
-| Operation              | **b3.5**  | **b3.6**  |
-|------------------------|-----------|-----------|
-| Port initialization    | `2.7s`    | `2.8s`    |
-| 300 Port writes        | `48s`     | `13s`     |
-| Average time per write | `159ms`   | `42ms`    |
+| Operation              | **b3.5**  | **b3.6**  | **b3.7**  |
+|------------------------|-----------|-----------|-----------|
+| Port initialization    | `2.7s`    | `2.8s`    | `2.0s`    |
+| 300 Port writes        | `48s`     | `13s`     | `0.15s`   |
+| Average time per write | `159ms`   | `42ms`    | `~0s`     |
 
 ### SoftPwmGeneration
 
 Generates a PWM signal in software. Currently is a visual test. Run the test and note which was 
 the last frequency change that was noticeable.
 
-| Operation                        | **b3.5** | **b3.6** |
-|----------------------------------|----------|----------|
-| Maximum Frequency @ `50%` duty   | ~`50hz`  | ~`50hz`  |
+| Operation                        | **b3.5** | **b3.6** | **b3.7** |
+|----------------------------------|----------|----------|----------|
+| Maximum Frequency @ `50%` duty   | ~`50hz`  | ~`50hz`  | ~`100hz` |
