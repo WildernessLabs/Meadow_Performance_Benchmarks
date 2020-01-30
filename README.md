@@ -14,7 +14,7 @@ Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time it ta
 |--------------------|-------------|-------------|-------------|
 | 50 digit Pi calc   | `11s`       | `11s`       | `2.3s`      |
 | 100 digit Pi calc  | `54s`       | `54s`       | `10.8s`     |
-| 150 digit Pi calc  | `127s`      | `126s`      | `14.4s`     |
+| 150 digit Pi calc  | `127s`      | `126s`      | `24.4s`     |
  
 ### List Operations
 
