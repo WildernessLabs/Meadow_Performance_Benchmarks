@@ -36,7 +36,7 @@ writes to them.
 |------------------------|-----------|-----------|
 | Port initialization    | `2.7s`    | `2.8s`    |
 | 300 Port writes        | `48s`     | `13s`     |
-| Average time per write | `15.9ms`  | `4.2ms`   |
+| Average time per write | `159ms`   | `42ms`    |
 
 ### SoftPwmGeneration
 
