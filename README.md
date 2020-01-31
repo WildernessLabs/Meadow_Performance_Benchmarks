@@ -16,6 +16,8 @@ Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time it ta
 | 100 digit Pi calc  | `54s`       | `54s`       | `10.8s`     |
 | 150 digit Pi calc  | `127s`      | `126s`      | `24.4s`     |
  
+![](https://docs.google.com/spreadsheets/d/e/2PACX-1vR6LF3jduievLwj3H_JNeO_yFrX3NewR8bAijKCfVsKTOTRuyfdNzvpPdNN0MWrP5-eaAxaRVFu0rn3/pubchart?oid=103861413&format=interactive) 
+ 
 ### List Operations
 
 Create a 1,000 item `List<int>`, and do perform basic list operations on it.
