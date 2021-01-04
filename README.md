@@ -44,6 +44,6 @@ writes to them.
 Generates a PWM signal in software. Currently is a visual test. Run the test and note which was 
 the last frequency change that was noticeable.
 
-| Operation                        | **b3.5** | **b3.6** | **b3.7** | **b3.7** |
+| Operation                        | **b3.5** | **b3.6** | **b3.7** | **b4.3** |
 |----------------------------------|----------|----------|----------|----------|
 | Maximum Frequency @ `50%` duty   | ~`50hz`  | ~`50hz`  | ~`100hz` | ~`100hz` |
