@@ -20,26 +20,32 @@ namespace Basic_Performance_Tests
             // 50% duty cycle
             softPwmPort.DutyCycle = 0.5f;
 
-
             Console.WriteLine("Testing port at 10hz");
-            softPwmPort.Frequency = 10;
+            softPwmPort.Frequency = new Meadow.Units.Frequency(10, Meadow.Units.Frequency.UnitType.Hertz);
             softPwmPort.Start();
             Thread.Sleep(2000);
 
             Console.WriteLine("Testing port at 25hz");
-            softPwmPort.Frequency = 25;
+            softPwmPort.Frequency = new Meadow.Units.Frequency(25, Meadow.Units.Frequency.UnitType.Hertz);
             Thread.Sleep(2000);
 
             Console.WriteLine("Testing port at 50hz");
-            softPwmPort.Frequency = 50;
+            softPwmPort.Frequency = new Meadow.Units.Frequency(50, Meadow.Units.Frequency.UnitType.Hertz);
             Thread.Sleep(2000);
 
             Console.WriteLine("Testing port at 100hz");
-            softPwmPort.Frequency = 100;
+            softPwmPort.Frequency = new Meadow.Units.Frequency(100, Meadow.Units.Frequency.UnitType.Hertz);
+            Thread.Sleep(2000);
+
+            Console.WriteLine("Testing port at 250hz");
+            softPwmPort.Frequency = new Meadow.Units.Frequency(250, Meadow.Units.Frequency.UnitType.Hertz);
+            Thread.Sleep(2000);
+
+            Console.WriteLine("Testing port at 500hz");
+            softPwmPort.Frequency = new Meadow.Units.Frequency(500, Meadow.Units.Frequency.UnitType.Hertz);
             Thread.Sleep(2000);
 
             softPwmPort.Stop();
-
         }
     }
 }

@@ -35,7 +35,6 @@ namespace Basic_Performance_Tests
         }
 
         /* return the inverse of x mod y */
-
         private static int inv_mod(int x, int y)
         {
             int q, u, v, a, c, t;
@@ -96,7 +95,6 @@ namespace Basic_Performance_Tests
         }
 
         /* return the prime number immediatly after n */
-
         private static int next_prime(int n)
         {
             do {
@@ -105,7 +103,7 @@ namespace Basic_Performance_Tests
             return n;
         }
 
-        private static String CalculatePiDigits(int n)
+        private static string CalculatePiDigits(int n)
         {
             int av, vmax, num, den, s, t;
             var N = (int)((n + 20) * System.Math.Log(10) / System.Math.Log(2));
@@ -164,15 +162,14 @@ namespace Basic_Performance_Tests
             }
             int Resultx = (int)(sum * 1e9);
 
-            String StringResult = Resultx.ToString(); //String.Format("{0:D9}", Result));
+            string result = Resultx.ToString(); //String.Format("{0:D9}", Result));
 
-            if (StringResult.Length < 9) {
-                for (int i = StringResult.Length; i < 9; i++) {
-                    StringResult = "0" + StringResult;
+            if (result.Length < 9) {
+                for (int i = result.Length; i < 9; i++) {
+                    result = "0" + result;
                 }
             }
-            return StringResult;
+            return result;
         }
-
     }
 }
