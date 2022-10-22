@@ -29,7 +29,8 @@ namespace Basic_Performance_Tests
             elapsedTimePortsCreated = stopwatch.ElapsedMilliseconds;
 
             // write to the ports
-            for (int i = 0; i < writeLoopCount; i++) {
+            for (int i = 0; i < writeLoopCount; i++) 
+            {
                 state = !state;
                 red.State = state;
                 green.State = state;
@@ -54,6 +55,5 @@ namespace Basic_Performance_Tests
             green.Dispose();
             blue.Dispose();
         }
-
     }
 }

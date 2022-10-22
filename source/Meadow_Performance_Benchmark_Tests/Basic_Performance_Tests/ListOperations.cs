@@ -61,6 +61,5 @@ namespace Basic_Performance_Tests
             Console.WriteLine($"| List clearing | {timeToClear}ms |");
             Console.WriteLine("=======================================");
         }
-
     }
 }
