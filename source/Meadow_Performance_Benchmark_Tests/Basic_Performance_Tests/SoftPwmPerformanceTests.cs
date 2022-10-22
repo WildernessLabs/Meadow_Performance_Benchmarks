@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading;
-using Meadow.Foundation;
 using Meadow.Foundation.Generators;
 using Meadow.Hardware;
 
