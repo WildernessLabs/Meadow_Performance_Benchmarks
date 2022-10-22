@@ -16,6 +16,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meadow.Units", "..\..\..\Me
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meadow.Contracts", "..\..\..\Meadow.Contracts\Source\Meadow.Contracts\Meadow.Contracts.csproj", "{87802171-9819-45F7-AE9C-E0F021783120}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MQTTnet", "..\..\..\MQTTnet\Source\MQTTnet\MQTTnet.csproj", "{8E30F73E-2F57-453E-969C-AB1B479BB358}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{87802171-9819-45F7-AE9C-E0F021783120}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87802171-9819-45F7-AE9C-E0F021783120}.Release|Any CPU.Build.0 = Release|Any CPU
 		{87802171-9819-45F7-AE9C-E0F021783120}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8E30F73E-2F57-453E-969C-AB1B479BB358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E30F73E-2F57-453E-969C-AB1B479BB358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E30F73E-2F57-453E-969C-AB1B479BB358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E30F73E-2F57-453E-969C-AB1B479BB358}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{D76AE909-3911-496A-8C2B-78211E626E42} = {36D01C5F-01B0-4C72-8BFD-2F95DD92B58F}
 		{895F09F1-5E97-49BD-91F8-B1C62C1B3D41} = {36D01C5F-01B0-4C72-8BFD-2F95DD92B58F}
 		{87802171-9819-45F7-AE9C-E0F021783120} = {36D01C5F-01B0-4C72-8BFD-2F95DD92B58F}
+		{8E30F73E-2F57-453E-969C-AB1B479BB358} = {36D01C5F-01B0-4C72-8BFD-2F95DD92B58F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {04112AB6-9592-4060-BD8D-231EE21195FC}
