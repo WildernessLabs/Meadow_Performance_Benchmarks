@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading;
-using Meadow.Foundation.Generators;
 using Meadow.Hardware;
 
 namespace Basic_Performance_Tests
