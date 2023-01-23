@@ -14,6 +14,8 @@ To validate, make sure to run application in `release` mode.
 
 Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time it takes.
 
+![image](design/Picture1.png)
+
 | Operation          | **b3.5**   | **b3.6**   | **b3.7**   | **b6.0.1** | **b6.3**   | **RC1 no JIT** | **RC1 w/ JIT** | **RC-2** |
 |--------------------|------------|------------|------------|------------|------------|----------------|----------------|----------|
 | 50 digit Pi calc   | `11s`      | `11s`      | `2.3s`     | `1.8s`     | `1.7s`     | `2.3s`         | `2.3s`         | `2.2s`   |
