@@ -12,9 +12,7 @@ To validate, make sure to run application in `release` mode.
 
 ### Pi Calculation
 
-Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time it takes.
-
-![Pi Calculation Graph](design/pi-calculation-dark.png)
+Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time it takes. Here are the results per release update:
 
 | Operation          | **b3.5**   | **b3.6**   | **b3.7**   | **b6.0.1** | **b6.3**   | **RC1 no JIT** | **RC1 w/ JIT** | **RC-2** |
 |--------------------|------------|------------|------------|------------|------------|----------------|----------------|----------|
@@ -22,6 +20,7 @@ Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time it ta
 | 100 digit Pi calc  | `54s`      | `54s`      | `10.8s`    | `8.9s`     | `8.3s`     | `11.2s`        | `11.1s`        | `10.1s`  |
 | 150 digit Pi calc  | `127s`     | `126s`     | `24.4s`    | `20.6s`    | `19.3s`    | `26.3s`        | `25.8s`        | `23.4s`  |
 
+![Pi Calculation Graph](design/pi-calculation-dark.png)
  
 ### List Operations
 
@@ -32,7 +31,14 @@ Create a 1,000 item `List<int>`, and do perform basic list operations on it.
 | List instantiation | `30ms`     | `30ms`     | `30ms`     | `19ms`     | `10ms`     | `11ms`     | `11ms`     | `5ms`          | `13ms`         | `14ms`   |
 | List population    | `120ms`    | `120ms`    | `20ms`     | `44ms`     | `20ms`     | `21ms`     | `10ms`     | `21ms`         | `28ms`         | `29ms`   |
 | List summation     | `130ms`    | `120ms`    | `30ms`     | `21ms`     | `19ms`     | `19ms`     | `11ms`     | `19ms`         | `26ms`         | `26ms`   |
+
+![Pi Calculation Graph](design/list-operations-dark.png)
+
+| Operation          | **b3.5**   | **b3.6**   | **b3.7**   | **b4.3**   | **b5.1**   | **b6.0.1** | **b6.3**   | **RC1 no JIT** | **RC1 w/ JIT** | **RC-2** |
+|--------------------|------------|------------|------------|------------|------------|------------|------------|----------------|----------------|----------|
 | List clearing      | `59s`      | `59s`      | `7.7s`     | `6.1s`     | `7.1s`     | `9.0s`     | `8.8s`     | `7.5s`         | `115ms`        | `130ms`  |
+
+![Pi Calculation Graph](design/list-operations-dark.png)
 
 ### Digital Output Port Operations
 
