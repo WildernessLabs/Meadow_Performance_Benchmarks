@@ -16,9 +16,9 @@ Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time it ta
 
 | Operation          | **b3.5**   | **b3.6**   | **b3.7**   | **b6.0.1** | **b6.3**   | **RC1 no JIT** | **RC1 w/ JIT** | **RC-2** |
 |--------------------|------------|------------|------------|------------|------------|----------------|----------------|----------|
-| 50 digit Pi calc   | `11s`      | `11s`      | `2.3s`     | `1.8s`     | `1.7s`     | `2.3s`         | `2.3s`         | `2.2s`   |
-| 100 digit Pi calc  | `54s`      | `54s`      | `10.8s`    | `8.9s`     | `8.3s`     | `11.2s`        | `11.1s`        | `10.1s`  |
-| 150 digit Pi calc  | `127s`     | `126s`     | `24.4s`    | `20.6s`    | `19.3s`    | `26.3s`        | `25.8s`        | `23.4s`  |
+| 50 digit Pi   | `11s`      | `11s`      | `2.3s`     | `1.8s`     | `1.7s`     | `2.3s`         | `2.3s`         | `2.2s`   |
+| 100 digit Pi  | `54s`      | `54s`      | `10.8s`    | `8.9s`     | `8.3s`     | `11.2s`        | `11.1s`        | `10.1s`  |
+| 150 digit Pi  | `127s`     | `126s`     | `24.4s`    | `20.6s`    | `19.3s`    | `26.3s`        | `25.8s`        | `23.4s`  |
 
 ![Pi Calculation Graph](design/pi-calculation-dark.png)
  
@@ -28,9 +28,9 @@ Create a 1,000 item `List<int>`, and do perform basic list operations on it.
 
 | Operation          | **b3.5**   | **b3.6**   | **b3.7**   | **b4.3**   | **b5.1**   | **b6.0.1** | **b6.3**   | **RC1 no JIT** | **RC1 w/ JIT** | **RC-2** |
 |--------------------|------------|------------|------------|------------|------------|------------|------------|----------------|----------------|----------|
-| List instantiation | `30ms`     | `30ms`     | `30ms`     | `19ms`     | `10ms`     | `11ms`     | `11ms`     | `5ms`          | `13ms`         | `14ms`   |
-| List population    | `120ms`    | `120ms`    | `20ms`     | `44ms`     | `20ms`     | `21ms`     | `10ms`     | `21ms`         | `28ms`         | `29ms`   |
-| List summation     | `130ms`    | `120ms`    | `30ms`     | `21ms`     | `19ms`     | `19ms`     | `11ms`     | `19ms`         | `26ms`         | `26ms`   |
+| Instantiation | `30ms`     | `30ms`     | `30ms`     | `19ms`     | `10ms`     | `11ms`     | `11ms`     | `5ms`          | `13ms`         | `14ms`   |
+| Population    | `120ms`    | `120ms`    | `20ms`     | `44ms`     | `20ms`     | `21ms`     | `10ms`     | `21ms`         | `28ms`         | `29ms`   |
+| Summation     | `130ms`    | `120ms`    | `30ms`     | `21ms`     | `19ms`     | `19ms`     | `11ms`     | `19ms`         | `26ms`         | `26ms`   |
 
 ![Pi Calculation Graph](design/list-operations-dark.png)
 
@@ -38,7 +38,7 @@ Create a 1,000 item `List<int>`, and do perform basic list operations on it.
 |--------------------|------------|------------|------------|------------|------------|------------|------------|----------------|----------------|----------|
 | List clearing      | `59s`      | `59s`      | `7.7s`     | `6.1s`     | `7.1s`     | `9.0s`     | `8.8s`     | `7.5s`         | `115ms`        | `130ms`  |
 
-![Pi Calculation Graph](design/list-operations-dark.png)
+![Pi Calculation Graph](design/list-operations-clearing-dark.png)
 
 ### Digital Output Port Operations
 
