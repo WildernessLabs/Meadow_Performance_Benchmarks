@@ -43,23 +43,23 @@ Create a 1,000 item `List<int>`, and do perform basic list operations on it.
 Initializes three `DigitalOutputPort` instances, one for each of the onboard LED components and 
 writes to them.
 
-![Digital Output Port Operations](design/digital-output-initialize-dark.png)
-
 | Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
 | Port initialization    | `2700`    | `2800`    | `2000`    | `500`     | `450`     | `460`      | `470`      | `480`      | `740`          | `704`    |
 
-![Digital Output Port Operations](design/digital-output-writes-dark.png)
+![Digital Output Port Operations](design/digital-output-initialize-dark.png)
 
 | Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
 | 300 Port writes        | `48000`   | `13000`   | `150`     | `1400`    | `1330`    | `150`      | `140`      | `140`      | `50`          | `50`     |
 
-![Digital Output Port Operations](design/digital-output-average-time-dark.png)
+![Digital Output Port Operations](design/digital-output-writes-dark.png)
 
 | Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
 | Average time per write | `159`     | `42`      | `0.5`     | `0.5`     | `0.44`    | `0.51`     | `0.46`     | `0.47`     | `0.16`         | `0.17`   |
+
+![Digital Output Port Operations](design/digital-output-average-time-dark.png)
 
 ## SoftPwmGeneration
 
