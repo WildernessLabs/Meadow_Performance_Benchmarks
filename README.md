@@ -8,9 +8,7 @@ To validate, make sure to run application in `release` mode.
 
 **Please Note** - Small variances will occur between runs and between boards.
 
-## Benchmark Results
-
-### Pi Calculation
+## Pi Calculation
 
 Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time it takes. Here are the results per release update:
 
@@ -22,7 +20,7 @@ Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time it ta
 
 ![Pi Calculation Graph](design/pi-calculation-dark.png)
  
-### List Operations
+## List Operations
 
 Create a 1,000 item `List<int>`, and do perform basic list operations on it.
 
@@ -40,18 +38,30 @@ Create a 1,000 item `List<int>`, and do perform basic list operations on it.
 
 ![List Operations Graph](design/list-operations-clearing-dark.png)
 
-### Digital Output Port Operations
+## Digital Output Port Operations
 
 Initializes three `DigitalOutputPort` instances, one for each of the onboard LED components and 
 writes to them.
 
+![Digital Output Port Operations](design/digital-output-initialize-dark.png)
+
 | Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
 | Port initialization    | `2700`    | `2800`    | `2000`    | `500`     | `450`     | `460`      | `470`      | `480`      | `740`          | `704`    |
-| 300 Port writes        | `48000`   | `13000`   | `150`     | `1400`    | `1330`    | `150`      | `140`      | `140`      | `50s`          | `50`     |
+
+![Digital Output Port Operations](design/digital-output-writes-dark.png)
+
+| Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
+|------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
+| 300 Port writes        | `48000`   | `13000`   | `150`     | `1400`    | `1330`    | `150`      | `140`      | `140`      | `50`          | `50`     |
+
+![Digital Output Port Operations](design/digital-output-average-time-dark.png)
+
+| Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
+|------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
 | Average time per write | `159`     | `42`      | `0.5`     | `0.5`     | `0.44`    | `0.51`     | `0.46`     | `0.47`     | `0.16`         | `0.17`   |
 
-### SoftPwmGeneration
+## SoftPwmGeneration
 
 Generates a PWM signal in software. Currently is a visual test. Run the test and note which was 
 the last frequency change that was noticeable.
