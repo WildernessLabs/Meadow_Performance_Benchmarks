@@ -8,6 +8,20 @@ To validate, make sure to run application in `release` mode.
 
 **Please Note** - Small variances will occur between runs and between boards.
 
+## Benchmark results
+
+Below this markdown you will see the kinds of tests we perform on our boards to benchmark its performance for each release.
+
+* [Pi Calculation](#pi-calculation)
+* [List Operations](#list-operations)
+  * [Instantiation, Population and Summation]()
+  * [Clearing]()
+* [Digital Output Operations](#digital-output-port-operations)
+  * [Instantiation]()
+  * [Port Writes]()
+  * [Average Time Writes]()
+* [Soft PWM](#softpwmgeneration)
+
 ## Pi Calculation
 
 Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time it takes. Here are the results per release update:
