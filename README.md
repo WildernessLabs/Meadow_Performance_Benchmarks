@@ -14,23 +14,18 @@ Below this markdown you will see the kinds of tests we perform on our boards to 
 
 * [Pi Calculation](#pi-calculation)
 * [List Operations](#list-operations)
-  * [Instantiation, Population and Summation]()
-  * [Clearing]()
 * [Digital Output Operations](#digital-output-port-operations)
-  * [Instantiation]()
-  * [Port Writes]()
-  * [Average Time Writes]()
 * [Soft PWM](#softpwmgeneration)
 
 ## Pi Calculation
 
-Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time it takes. Here are the results per release update:
+Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time (in seconds) it takes. Here are the results per release update:
 
 | Operation              | **b3.5**   | **b3.6**   | **b3.7**   | **b6.0.1** | **b6.3**   | **RC1**   | **RC1 w/ JIT** | **RC-2** |
 |------------------------|------------|------------|------------|------------|------------|-----------|----------------|----------|
-| Calculate 50 digits    | `11`       | `11`       | `2.3`      | `1.8`      | `1.7`      | `2.3`     | `2.3`          | `2.2`    |
-| Calculate 100 digits   | `54`       | `54`       | `10.8`     | `8.9`      | `8.3`      | `11.2`    | `11.1`         | `10.1`   |
-| Calculate 150 digits   | `127`      | `126`      | `24.4`     | `20.6`     | `19.3`     | `26.3`    | `25.8`         | `23.4`   |
+| Calculate 50 digits    | `11s`      | `11s`      | `2.3s`     | `1.8s`     | `1.7s`     | `2.3s`    | `2.3s`         | `2.2s`   |
+| Calculate 100 digits   | `54s`      | `54s`      | `10.8s`    | `8.9s`     | `8.3s`     | `11.2s`   | `11.1s`        | `10.1s`  |
+| Calculate 150 digits   | `127s`     | `126s`     | `24.4s`    | `20.6s`    | `19.3s`    | `26.3s`   | `25.8s`        | `23.4s`  |
 
 ![Pi Calculation Graph](design/pi-calculation-dark.png)
  
@@ -40,15 +35,15 @@ Create a 1,000 item `List<int>`, and do perform basic list operations on it.
 
 | Operation          | **b3.5**   | **b3.6**   | **b3.7**   | **b4.3**   | **b5.1**   | **b6.0.1** | **b6.3**   | **RC1**   | **RC1 w/ JIT** | **RC-2** |
 |--------------------|------------|------------|------------|------------|------------|------------|------------|-----------|----------------|----------|
-| Instantiation      | `30`       | `30`       | `30`       | `19`       | `10`       | `11`       | `11`       | `5`       | `13`           | `14`     |
-| Population         | `120`      | `120`      | `20`       | `44`       | `20`       | `21`       | `10`       | `21`      | `28`           | `29`     |
-| Summation          | `130`      | `120`      | `30`       | `21`       | `19`       | `19`       | `11`       | `19`      | `26`           | `26`     |
+| Instantiation      | `30ms`      | `30ms`      | `30ms`      | `19ms`      | `10ms`      | `11ms`      | `11ms`      | `5ms`      | `13ms`          | `14ms`    |
+| Population         | `120ms`     | `120ms`     | `20ms`      | `44ms`      | `20ms`      | `21ms`      | `10ms`      | `21ms`     | `28ms`          | `29ms`    |
+| Summation          | `130ms`     | `120ms`     | `30ms`      | `21ms`      | `19ms`      | `19ms`      | `11ms`      | `19ms`     | `26ms`          | `26ms`    |
 
 ![List Operations Graph](design/list-operations-dark.png)
 
 | Operation          | **b3.5**   | **b3.6**   | **b3.7**   | **b4.3**   | **b5.1**   | **b6.0.1** | **b6.3**   | **RC1** | **RC1 w/ JIT** | **RC-2** |
 |--------------------|------------|------------|------------|------------|------------|------------|------------|---------|----------------|----------|
-| Clearing           | `59000`    | `59000`    | `7700`     | `6100`     | `7100`     | `9000`     | `8800`     | `7500`  | `115`          | `130`    |
+| Clearing           | `59000ms`   | `59000ms`   | `7700ms`    | `6100ms`    | `7100ms`    | `9000ms`    | `8800ms`    | `7500ms` | `115ms`         | `130ms`   |
 
 ![List Operations Graph](design/list-operations-clearing-dark.png)
 
@@ -59,19 +54,19 @@ writes to them.
 
 | Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
-| Port initialization    | `2700`    | `2800`    | `2000`    | `500`     | `450`     | `460`      | `470`      | `480`      | `740`          | `704`    |
+| Port initialization    | `2700ms`   | `2800ms`   | `2000ms`   | `500ms`    | `450ms`    | `460ms`     | `470ms`     | `480ms`     | `740ms`         | `704ms`   |
 
 ![Digital Output Port Operations](design/digital-output-initialize-dark.png)
 
 | Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
-| 300 writes             | `48000`   | `13000`   | `150`     | `1400`    | `1330`    | `150`      | `140`      | `140`      | `50`          | `50`     |
+| 300 writes             | `48000ms`  | `13000ms`  | `150ms`    | `1400ms`   | `1330ms`   | `150ms`     | `140ms`     | `140ms`     | `50ms`         | `50ms`    |
 
 ![Digital Output Port Operations](design/digital-output-writes-dark.png)
 
 | Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
-| Avg time per write     | `159`     | `42`      | `0.5`     | `0.5`     | `0.44`    | `0.51`     | `0.46`     | `0.47`     | `0.16`         | `0.17`   |
+| Avg time per write     | `159ms`    | `42ms`     | `0.5ms`    | `0.5ms`    | `0.44ms`   | `0.51ms`    | `0.46ms`    | `0.47ms`    | `0.16ms`        | `0.17ms`  |
 
 ![Digital Output Port Operations](design/digital-output-average-time-dark.png)
 
