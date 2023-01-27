@@ -78,3 +78,5 @@ the last frequency change that was noticeable.
 | Operation                        | **b3.5** | **b3.6** | **b3.7** | **b4.3** | **b5.1** | **b6.0.1** | **b6.3**   | **RC1**   | **RC1 w/ JIT** |
 |----------------------------------|----------|----------|----------|----------|----------|------------|------------|-----------|----------------|
 | Maximum Frequency @ `50%` duty   | ~`50hz`  | ~`50hz`  | ~`100hz` | ~`100hz` | ~`100hz` | ~`100hz`   | ~`100hz`   |  ~`100Hz` | ~`1500Hz`      |
+
+![Digital Output Port Operations](design/soft-pwm-generation-dark.png)
