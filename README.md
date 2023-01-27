@@ -70,7 +70,7 @@ writes to them.
 
 ![Digital Output Port Operations](design/digital-output-average-time-dark.png)
 
-## SoftPwmGeneration
+## Soft PWM Generation
 
 Generates a PWM signal in software. Currently is a visual test. Run the test and note which was 
 the last frequency change that was noticeable.
