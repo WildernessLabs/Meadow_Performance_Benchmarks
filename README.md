@@ -13,9 +13,9 @@ To validate, make sure to run application in `release` mode.
 Below this markdown you will see the kinds of tests we perform on our boards to benchmark its performance for each release.
 
 * [Pi Calculation](#pi-calculation)
-* [List Operations](#list-operations)
+* [List Benchmark](#list-benchmark)
 * [Digital Output Operations](#digital-output-port-operations)
-* [Soft PWM](#softpwmgeneration)
+* [Soft PWM Generation](#soft-pwm-generation)
 
 ## Pi Calculation
 
@@ -33,7 +33,7 @@ Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time (in s
 
 ### List Operations
 
-Create a 1,000 item `List<int>`, and do perform basic list operations on it.
+Create a 1,000 item `List<int>`, and perform basic list operations on it.
 
 | Operation          | **b3.5**   | **b3.6**   | **b3.7**   | **b4.3**   | **b5.1**   | **b6.0.1** | **b6.3**   | **RC1**   | **RC1 w/ JIT** | **RC-2** |
 |--------------------|------------|------------|------------|------------|------------|------------|------------|-----------|----------------|----------|
@@ -57,8 +57,7 @@ Clear the 1,000 item list by removing an item one at a time:
 
 ### Digital Port initialization
 
-Initializes three `DigitalOutputPort` instances, one for each of the onboard LED components and 
-writes to them.
+Initializes three `DigitalOutputPort` instances, one for each of the onboard LED components and writes to them. 
 
 | Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
@@ -68,7 +67,7 @@ writes to them.
 
 ### Digital Port Writes
 
-Alternate states to 3 Digital Output ports in 100 cycles.
+Alternate states to 3 Digital Output ports in 100 cycles. Due to the drastic change of performance for this benchmark going from 4800 milliseconds (or 4.8 seconds) to 50 milliseconds (or 0.05 seconds), the graph above is expressed on a **logarithmic scale**.
 
 | Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
@@ -78,7 +77,7 @@ Alternate states to 3 Digital Output ports in 100 cycles.
 
 ### Digital Port Average Time Per Write
 
-Average time calculated between creating and writing on the digital output ports. Due to the drastic change of performance for this benchmark going from 159 milliseconds to 0.17 milliseconds, the graph above is expressed on a logarithmic scale.
+Average time calculated between creating and writing on the digital output ports. Due to the drastic change of performance for this benchmark going from 159 milliseconds to 0.17 milliseconds, the graph above is expressed on a **logarithmic scale**.
 
 | Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
