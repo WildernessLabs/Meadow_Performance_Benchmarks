@@ -29,9 +29,9 @@ Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time (in s
 
 ![Pi Calculation](design/pi-calculation.png#gh-light-mode-only)![Pi Calculation](design/pi-calculation-dark.png#gh-dark-mode-only)
  
-## List Operations
+## List Benchmark
 
-### Basic Operations
+### List Operations
 
 Create a 1,000 item `List<int>`, and do perform basic list operations on it.
 
@@ -55,7 +55,7 @@ Clear the 1,000 item list by removing an item one at a time:
 
 ## Digital Output Port Operations
 
-### Port initialization
+### Digital Port initialization
 
 Initializes three `DigitalOutputPort` instances, one for each of the onboard LED components and 
 writes to them.
@@ -66,7 +66,7 @@ writes to them.
 
 ![Port initialization](design/digital-output-initialize.png#gh-light-mode-only)![Port initialization](design/digital-output-initialize-dark.png#gh-dark-mode-only)
 
-### Port writing
+### Digital Port Writes
 
 Alternate states to 3 Digital Output ports in 100 cycles.
 
@@ -76,7 +76,7 @@ Alternate states to 3 Digital Output ports in 100 cycles.
 
 ![300 writes](design/digital-output-writes-log.png#gh-light-mode-only)![300 writes](design/digital-output-writes-log-dark.png#gh-dark-mode-only)
 
-### Avg time per write
+### Digital Port Average Time Per Write
 
 Average time calculated between creating and writing on the digital output ports. Due to the drastic change of performance for this benchmark going from 159 milliseconds to 0.17 milliseconds, the graph above is expressed on a logarithmic scale.
 
