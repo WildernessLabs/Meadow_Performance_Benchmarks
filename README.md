@@ -19,7 +19,7 @@ Below this markdown you will see the kinds of tests we perform on our boards to 
 
 ## Pi Calculation
 
-Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time (in seconds) it takes. Here are the results per release update:
+Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time (in seconds) it takes. Here are the results per release:
 
 | Operation              | **b3.5**   | **b3.6**   | **b3.7**   | **b6.0.1** | **b6.3**   | **RC1**   | **RC1 w/ JIT** | **RC-2** |
 |------------------------|------------|------------|------------|------------|------------|-----------|----------------|----------|
@@ -41,6 +41,8 @@ Create a 1,000 item `List<int>`, and do perform basic list operations on it.
 
 ![List Operations](design/list-operations.png#gh-light-mode-only)![List Operations](design/list-operations-dark.png#gh-dark-mode-only)
 
+Clear the 1,000 item list by removing an item one at a time:
+
 | Operation          | **b3.5**   | **b3.6**   | **b3.7**   | **b4.3**   | **b5.1**   | **b6.0.1** | **b6.3**   | **RC1** | **RC1 w/ JIT** | **RC-2** |
 |--------------------|------------|------------|------------|------------|------------|------------|------------|---------|----------------|----------|
 | Clearing           | `59000ms`   | `59000ms`   | `7700ms`    | `6100ms`    | `7100ms`    | `9000ms`    | `8800ms`    | `7500ms` | `115ms`         | `130ms`   |
@@ -58,11 +60,15 @@ writes to them.
 
 ![Port initialization](design/digital-output-initialize.png#gh-light-mode-only)![Port initialization](design/digital-output-initialize-dark.png#gh-dark-mode-only)
 
+Alternate states to 3 Digital Output ports in 100 cycles.
+
 | Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
 | 300 writes             | `48000ms`  | `13000ms`  | `150ms`    | `1400ms`   | `1330ms`   | `150ms`     | `140ms`     | `140ms`     | `50ms`         | `50ms`    |
 
 ![300 writes](design/digital-output-writes.png#gh-light-mode-only)![300 writes](design/digital-output-writes-dark.png#gh-dark-mode-only)
+
+Average time calculated between creating and writing on the digital output ports.
 
 | Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
@@ -72,8 +78,7 @@ writes to them.
 
 ## Soft PWM Generation
 
-Generates a PWM signal in software. Currently is a visual test. Run the test and note which was 
-the last frequency change that was noticeable.
+Generates a PWM signal in software. Currently is a visual test. Run the test and note which was the last frequency change that was noticeable.
 
 | Operation                        | **b3.5** | **b3.6** | **b3.7** | **b4.3** | **b5.1** | **b6.0.1** | **b6.3**   | **RC1**   | **RC1 w/ JIT** |
 |----------------------------------|----------|----------|----------|----------|----------|------------|------------|-----------|----------------|
