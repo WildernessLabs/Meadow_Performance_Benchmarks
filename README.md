@@ -31,6 +31,8 @@ Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time (in s
  
 ## List Operations
 
+### Basic Operations
+
 Create a 1,000 item `List<int>`, and do perform basic list operations on it.
 
 | Operation          | **b3.5**   | **b3.6**   | **b3.7**   | **b4.3**   | **b5.1**   | **b6.0.1** | **b6.3**   | **RC1**   | **RC1 w/ JIT** | **RC-2** |
@@ -40,6 +42,8 @@ Create a 1,000 item `List<int>`, and do perform basic list operations on it.
 | Summation          | `130ms`     | `120ms`     | `30ms`      | `21ms`      | `19ms`      | `19ms`      | `11ms`      | `19ms`     | `26ms`          | `26ms`    |
 
 ![List Operations](design/list-operations.png#gh-light-mode-only)![List Operations](design/list-operations-dark.png#gh-dark-mode-only)
+
+### List Clearing
 
 Clear the 1,000 item list by removing an item one at a time:
 
@@ -51,6 +55,8 @@ Clear the 1,000 item list by removing an item one at a time:
 
 ## Digital Output Port Operations
 
+### Port initialization
+
 Initializes three `DigitalOutputPort` instances, one for each of the onboard LED components and 
 writes to them.
 
@@ -60,6 +66,8 @@ writes to them.
 
 ![Port initialization](design/digital-output-initialize.png#gh-light-mode-only)![Port initialization](design/digital-output-initialize-dark.png#gh-dark-mode-only)
 
+### Port writing
+
 Alternate states to 3 Digital Output ports in 100 cycles.
 
 | Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
@@ -68,7 +76,9 @@ Alternate states to 3 Digital Output ports in 100 cycles.
 
 ![300 writes](design/digital-output-writes-log.png#gh-light-mode-only)![300 writes](design/digital-output-writes-log-dark.png#gh-dark-mode-only)
 
-Average time calculated between creating and writing on the digital output ports.
+### Avg time per write
+
+Average time calculated between creating and writing on the digital output ports. Due to the drastic change of performance for this benchmark going from 159 milliseconds to 0.17 milliseconds, the graph above is expressed on a logarithmic scale.
 
 | Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
