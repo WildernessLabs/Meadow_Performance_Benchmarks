@@ -66,7 +66,7 @@ Alternate states to 3 Digital Output ports in 100 cycles.
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
 | 300 writes             | `48000ms`  | `13000ms`  | `150ms`    | `1400ms`   | `1330ms`   | `150ms`     | `140ms`     | `140ms`     | `50ms`         | `50ms`    |
 
-![300 writes](design/digital-output-writes.png#gh-light-mode-only)![300 writes](design/digital-output-writes-dark.png#gh-dark-mode-only)
+![300 writes](design/digital-output-writes-log.png#gh-light-mode-only)![300 writes](design/digital-output-writes-log-dark.png#gh-dark-mode-only)
 
 Average time calculated between creating and writing on the digital output ports.
 
@@ -74,7 +74,7 @@ Average time calculated between creating and writing on the digital output ports
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
 | Avg time per write     | `159ms`    | `42ms`     | `0.5ms`    | `0.5ms`    | `0.44ms`   | `0.51ms`    | `0.46ms`    | `0.47ms`    | `0.16ms`        | `0.17ms`  |
 
-![Avg time per write](design/digital-output-average-time.png#gh-light-mode-only)![Avg time per write](design/digital-output-average-time-dark.png#gh-dark-mode-only)
+![Avg time per write](design/digital-output-average-time-log.png#gh-light-mode-only)![Avg time per write](design/digital-output-average-time-log-dark.png#gh-dark-mode-only)
 
 ## Soft PWM Generation
 
