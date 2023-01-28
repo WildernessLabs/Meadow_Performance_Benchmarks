@@ -27,7 +27,7 @@ Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time (in s
 | Calculate 100 digits   | `54s`      | `54s`      | `10.8s`    | `8.9s`     | `8.3s`     | `11.2s`   | `11.1s`        | `10.1s`  |
 | Calculate 150 digits   | `127s`     | `126s`     | `24.4s`    | `20.6s`    | `19.3s`    | `26.3s`   | `25.8s`        | `23.4s`  |
 
-![Pi Calculation Graph](design/pi-calculation-dark.png)
+![GitHub-Mark-Light](design/pi-calculation.png)![GitHub-Mark-Dark](design/pi-calculation-dark.png)
  
 ## List Operations
 
@@ -45,7 +45,7 @@ Create a 1,000 item `List<int>`, and do perform basic list operations on it.
 |--------------------|------------|------------|------------|------------|------------|------------|------------|---------|----------------|----------|
 | Clearing           | `59000ms`   | `59000ms`   | `7700ms`    | `6100ms`    | `7100ms`    | `9000ms`    | `8800ms`    | `7500ms` | `115ms`         | `130ms`   |
 
-![List Operations Graph](design/list-operations-clearing-dark.png)
+![List Operations Graph](design/list-clearing-dark.png)
 
 ## Digital Output Port Operations
 
