@@ -27,7 +27,8 @@ Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time (in s
 | Calculate 100 digits   | `54s`      | `54s`      | `10.8s`    | `8.9s`     | `8.3s`     | `11.2s`   | `11.1s`        | `10.1s`  |
 | Calculate 150 digits   | `127s`     | `126s`     | `24.4s`    | `20.6s`    | `19.3s`    | `26.3s`   | `25.8s`        | `23.4s`  |
 
-![GitHub-Mark-Light](design/pi-calculation.png)![GitHub-Mark-Dark](design/pi-calculation-dark.png)
+![GitHub-Mark-Light](design/pi-calculation.png#gh-light-mode-only)![GitHub-Mark-Dark](design/pi-calculation-dark.png#gh-dark-mode-only)
+![GitHub-Mark-Light](https://user-images.githubusercontent.com/3369400/139447912-e0f43f33-6d9f-45f8-be46-2df5bbc91289.png#gh-dark-mode-only)![GitHub-Mark-Dark](https://user-images.githubusercontent.com/3369400/139448065-39a229ba-4b06-434b-bc67-616e2ed80c8f.png#gh-light-mode-only)
  
 ## List Operations
 
