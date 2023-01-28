@@ -56,19 +56,19 @@ writes to them.
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
 | Port initialization    | `2700ms`   | `2800ms`   | `2000ms`   | `500ms`    | `450ms`    | `460ms`     | `470ms`     | `480ms`     | `740ms`         | `704ms`   |
 
-![Digital Output Port Operations](design/digital-output-initialize-dark.png)
+![Port initialization](design/digital-output-initialize.png#gh-light-mode-only)![Port initialization](design/digital-output-initialize-dark.png#gh-dark-mode-only)
 
 | Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
 | 300 writes             | `48000ms`  | `13000ms`  | `150ms`    | `1400ms`   | `1330ms`   | `150ms`     | `140ms`     | `140ms`     | `50ms`         | `50ms`    |
 
-![Digital Output Port Operations](design/digital-output-writes-dark.png)
+![300 writes](design/digital-output-writes.png#gh-light-mode-only)![300 writes](design/digital-output-writes-dark.png#gh-dark-mode-only)
 
 | Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
 | Avg time per write     | `159ms`    | `42ms`     | `0.5ms`    | `0.5ms`    | `0.44ms`   | `0.51ms`    | `0.46ms`    | `0.47ms`    | `0.16ms`        | `0.17ms`  |
 
-![Digital Output Port Operations](design/digital-output-average-time-dark.png)
+![Avg time per write](design/digital-output-average-time.png#gh-light-mode-only)![Avg time per write](design/digital-output-average-time-dark.png#gh-dark-mode-only)
 
 ## Soft PWM Generation
 
@@ -79,4 +79,4 @@ the last frequency change that was noticeable.
 |----------------------------------|----------|----------|----------|----------|----------|------------|------------|-----------|----------------|
 | Maximum Frequency @ `50%` duty   | ~`50hz`  | ~`50hz`  | ~`100hz` | ~`100hz` | ~`100hz` | ~`100hz`   | ~`100hz`   |  ~`100Hz` | ~`1500Hz`      |
 
-![Digital Output Port Operations](design/soft-pwm-generation-dark.png)
+![Maximum Frequency @ 50% duty](design/soft-pwm-generation.png#gh-light-mode-only)![Maximum Frequency @ 50% duty](design/soft-pwm-generation-dark.png#gh-dark-mode-only)
