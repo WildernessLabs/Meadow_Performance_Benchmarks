@@ -67,21 +67,25 @@ Initializes three `DigitalOutputPort` instances, one for each of the onboard LED
 
 ### Digital Port Writes
 
-Alternate states to 3 Digital Output ports in 100 cycles. Due to the drastic change of performance for this benchmark going from 4800 milliseconds (or 4.8 seconds) to 50 milliseconds (or 0.05 seconds), the graph above is expressed on a **logarithmic scale**.
+Alternate states to 3 Digital Output ports in 100 cycles. 
 
 | Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
 | 300 writes             | `48000ms`  | `13000ms`  | `150ms`    | `1400ms`   | `1330ms`   | `150ms`     | `140ms`     | `140ms`     | `50ms`         | `50ms`    |
 
+**NOTE**: Due to the drastic change of performance for this benchmark going from 4800 milliseconds (or 4.8 seconds) to 50 milliseconds (or 0.05 seconds), the graph below is expressed on a **logarithmic scale**.
+
 ![300 writes](design/digital-output-writes-log.png#gh-light-mode-only)![300 writes](design/digital-output-writes-log-dark.png#gh-dark-mode-only)
 
 ### Digital Port Average Time Per Write
 
-Average time calculated between creating and writing on the digital output ports. Due to the drastic change of performance for this benchmark going from 159 milliseconds to 0.17 milliseconds, the graph above is expressed on a **logarithmic scale**.
+Average time calculated between creating and writing on the digital output ports. 
 
 | Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** |
 |------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|
 | Avg time per write     | `159ms`    | `42ms`     | `0.5ms`    | `0.5ms`    | `0.44ms`   | `0.51ms`    | `0.46ms`    | `0.47ms`    | `0.16ms`        | `0.17ms`  |
+
+**NOTE**: Due to the drastic change of performance for this benchmark going from 159 milliseconds to 0.17 milliseconds, the graph below is expressed on a **logarithmic scale**.
 
 ![Avg time per write](design/digital-output-average-time-log.png#gh-light-mode-only)![Avg time per write](design/digital-output-average-time-log-dark.png#gh-dark-mode-only)
 
