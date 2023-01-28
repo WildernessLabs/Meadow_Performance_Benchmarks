@@ -27,8 +27,7 @@ Calculates pi (`3.14159..`) to [`x`] digits and records the amount of time (in s
 | Calculate 100 digits   | `54s`      | `54s`      | `10.8s`    | `8.9s`     | `8.3s`     | `11.2s`   | `11.1s`        | `10.1s`  |
 | Calculate 150 digits   | `127s`     | `126s`     | `24.4s`    | `20.6s`    | `19.3s`    | `26.3s`   | `25.8s`        | `23.4s`  |
 
-![GitHub-Mark-Light](design/pi-calculation.png#gh-light-mode-only)![GitHub-Mark-Dark](design/pi-calculation-dark.png#gh-dark-mode-only)
-![GitHub-Mark-Light](https://user-images.githubusercontent.com/3369400/139447912-e0f43f33-6d9f-45f8-be46-2df5bbc91289.png#gh-dark-mode-only)![GitHub-Mark-Dark](https://user-images.githubusercontent.com/3369400/139448065-39a229ba-4b06-434b-bc67-616e2ed80c8f.png#gh-light-mode-only)
+![Pi Calculation](design/pi-calculation.png#gh-light-mode-only)![Pi Calculation](design/pi-calculation-dark.png#gh-dark-mode-only)
  
 ## List Operations
 
@@ -40,13 +39,13 @@ Create a 1,000 item `List<int>`, and do perform basic list operations on it.
 | Population         | `120ms`     | `120ms`     | `20ms`      | `44ms`      | `20ms`      | `21ms`      | `10ms`      | `21ms`     | `28ms`          | `29ms`    |
 | Summation          | `130ms`     | `120ms`     | `30ms`      | `21ms`      | `19ms`      | `19ms`      | `11ms`      | `19ms`     | `26ms`          | `26ms`    |
 
-![List Operations Graph](design/list-operations-dark.png)
+![List Operations](design/list-operations.png#gh-light-mode-only)![List Operations](design/list-operations-dark.png#gh-dark-mode-only)
 
 | Operation          | **b3.5**   | **b3.6**   | **b3.7**   | **b4.3**   | **b5.1**   | **b6.0.1** | **b6.3**   | **RC1** | **RC1 w/ JIT** | **RC-2** |
 |--------------------|------------|------------|------------|------------|------------|------------|------------|---------|----------------|----------|
 | Clearing           | `59000ms`   | `59000ms`   | `7700ms`    | `6100ms`    | `7100ms`    | `9000ms`    | `8800ms`    | `7500ms` | `115ms`         | `130ms`   |
 
-![List Operations Graph](design/list-clearing-dark.png)
+![List Clearing](design/list-clearing.png#gh-light-mode-only)![List Clearing](design/list-clearing-dark.png#gh-dark-mode-only)
 
 ## Digital Output Port Operations
 
