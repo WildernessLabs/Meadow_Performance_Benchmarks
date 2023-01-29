@@ -1,3 +1,5 @@
+<img src="design/banner.jpg" style="margin-bottom:10px" />
+
 # Meadow Performance Benchmarks
 
 Contains applications that measure the performance of Meadow, as well as the results of those tests.
