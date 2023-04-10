@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Threading;
-using Meadow.Foundation;
-using Meadow.Foundation.Generators;
 using Meadow.Hardware;
 
 namespace Basic_Performance_Tests
@@ -22,20 +20,20 @@ namespace Basic_Performance_Tests
 
 
             Console.WriteLine("Testing port at 10hz");
-            softPwmPort.Frequency = 10;
+            softPwmPort.Frequency = new Meadow.Units.Frequency(10);
             softPwmPort.Start();
             Thread.Sleep(2000);
 
             Console.WriteLine("Testing port at 25hz");
-            softPwmPort.Frequency = 25;
+            softPwmPort.Frequency = new Meadow.Units.Frequency(25);
             Thread.Sleep(2000);
 
             Console.WriteLine("Testing port at 50hz");
-            softPwmPort.Frequency = 50;
+            softPwmPort.Frequency = new Meadow.Units.Frequency(50);
             Thread.Sleep(2000);
 
             Console.WriteLine("Testing port at 100hz");
-            softPwmPort.Frequency = 100;
+            softPwmPort.Frequency = new Meadow.Units.Frequency(100);
             Thread.Sleep(2000);
 
             softPwmPort.Stop();
