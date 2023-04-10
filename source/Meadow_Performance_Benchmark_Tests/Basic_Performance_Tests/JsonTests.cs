@@ -15,7 +15,7 @@ namespace Basic_Performance_Tests
         public static void RunJsonTests()
         {
             string json = "{\"s\" : \"string\",\"i\" : 420,\"d\" : 420.68}";
-            var iterations = 1;
+            var iterations = 10;
             long elapsedTimeDeserialize;
 
             System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
@@ -30,7 +30,7 @@ namespace Basic_Performance_Tests
 
             stopwatch.Stop();
 
-            var averageDeserializeTime = (float) elapsedTimeDeserialize / (float) iterations;
+            var averageDeserializeTime = (float) timeToDeserialize / (float) iterations;
 
             Console.WriteLine("=======================================");
             Console.WriteLine($"JSON Deserialize Results:");
