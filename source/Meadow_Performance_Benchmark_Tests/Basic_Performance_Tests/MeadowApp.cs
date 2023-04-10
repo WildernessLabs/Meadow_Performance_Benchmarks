@@ -14,6 +14,7 @@ namespace Basic_Performance_Tests
             PiCalculationTests.CalculateTo(50);
             PiCalculationTests.CalculateTo(100);
             PiCalculationTests.CalculateTo(150);
+            JsonTests.RunJsonTests();
             return base.Run();
         }
     }
