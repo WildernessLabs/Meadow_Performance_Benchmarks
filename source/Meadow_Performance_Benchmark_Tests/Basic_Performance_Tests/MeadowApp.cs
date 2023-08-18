@@ -1,11 +1,11 @@
-﻿using System;
-using System.Threading.Tasks;
-using Meadow;
+﻿using Meadow;
 using Meadow.Devices;
+using System;
+using System.Threading.Tasks;
 
 namespace Basic_Performance_Tests
 {
-    public class MeadowApp : App<F7FeatherV2>
+    public class MeadowApp : App<F7FeatherV1>
     {
         public override Task Run()
         {
