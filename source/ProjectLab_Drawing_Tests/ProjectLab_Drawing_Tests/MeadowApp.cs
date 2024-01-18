@@ -17,6 +17,8 @@ public class MeadowApp : App<F7CoreComputeV2>
 
     MicroGraphics graphics;
 
+    bool isRunning = false;
+
     public override Task Initialize()
     {
         Console.WriteLine("Initialize...");
@@ -24,6 +26,7 @@ public class MeadowApp : App<F7CoreComputeV2>
         benchmarkResults = new List<BenchmarkResult>();
 
         var projLab = ProjectLab.Create();
+        projLab.UpButton.Clicked += (s, e) => Benchmark();
 
         graphics = new MicroGraphics(projLab.Display);
 
@@ -32,17 +35,34 @@ public class MeadowApp : App<F7CoreComputeV2>
 
     public override Task Run()
     {
+        Benchmark();
+
+        return Task.CompletedTask;
+    }
+
+    public void Benchmark()
+    {
+        if (isRunning == true)
+        {
+            Console.WriteLine("Benchmark already running...");
+            return;
+        }
+
+        isRunning = true;
+
         Console.WriteLine("Run benchmarks...");
 
         RunBenchmarks();
 
         ShowResults();
 
-        return Task.CompletedTask;
+        isRunning = false;
     }
 
     void RunBenchmarks()
     {
+        benchmarkResults.Clear();
+
         benchmarkResults.Add(RunBenchmark(new PathBenchmark()));
         benchmarkResults.Add(RunBenchmark(new PartialShowBenchmark(), 100));
         benchmarkResults.Add(RunBenchmark(new StarfieldBenchmark()));
