@@ -23,8 +23,8 @@ internal class GradientFillBenchmark : IBenchmark
         {
             graphics.DrawVerticalGradient(0, 0, graphics.Width, graphics.Height, color1, color2);
             graphics.Show();
-            color1 = color1.WithHue(color1.Hue + 0.02);
-            color2 = color2.WithHue(color2.Hue + 0.02);
+            color1 = color1.WithHue(color1.Hue + 0.05);
+            color2 = color2.WithHue(color2.Hue + 0.05);
         }
     }
 }
