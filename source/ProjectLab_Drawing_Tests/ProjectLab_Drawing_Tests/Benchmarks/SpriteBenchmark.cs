@@ -43,6 +43,7 @@ internal class SpriteBenchmark : IBenchmark
 
     public void Run(int numberOfFrames)
     {
+        graphics.Clear();
         for (int i = 0; i < numberOfFrames; i++)
         {
             Update();

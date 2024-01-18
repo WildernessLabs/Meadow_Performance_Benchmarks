@@ -56,12 +56,12 @@ public class MeadowApp : App<F7CoreComputeV2>
         graphics.Clear();
         graphics.CurrentFont = new Font8x12();
 
-        graphics.DrawText(0, 2, "Results", Color.LawnGreen);
+        graphics.DrawText(5, 2, "Results", Color.LawnGreen);
         graphics.Show();
 
         TimeSpan totalElapsed = TimeSpan.Zero;
 
-        int y = 30;
+        int y = 40;
 
         foreach (var result in benchmarkResults)
         {
@@ -70,16 +70,17 @@ public class MeadowApp : App<F7CoreComputeV2>
 
             var fps = result.NumberOfFrames / result.Elapsed.TotalSeconds;
 
-            graphics.DrawText(0, y, result.Name, Color.LawnGreen);
-            graphics.DrawText(180, y, $"{fps:n2}fps", Color.LawnGreen, alignmentH: HorizontalAlignment.Right);
+            graphics.DrawText(5, y, result.Name, Color.LawnGreen);
+            graphics.DrawText(315, y, $"{fps:n2}fps", Color.LawnGreen, alignmentH: HorizontalAlignment.Right);
             graphics.Show();
 
             y += 20;
         }
 
+        Thread.Sleep(250);
         y += 30;
-        graphics.DrawText(0, y, "Total time", Color.LawnGreen);
-        graphics.DrawText(180, y, $"{totalElapsed.TotalSeconds:n2}s", Color.LawnGreen, alignmentH: HorizontalAlignment.Right);
+        graphics.DrawText(5, y, "Total time", Color.LawnGreen);
+        graphics.DrawText(315, y, $"{totalElapsed.TotalSeconds:n2}s", Color.LawnGreen, alignmentH: HorizontalAlignment.Right);
 
         graphics.Show();
     }
