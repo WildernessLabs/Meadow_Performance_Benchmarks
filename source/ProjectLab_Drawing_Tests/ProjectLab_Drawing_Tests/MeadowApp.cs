@@ -4,6 +4,8 @@ using Meadow.Foundation.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -46,6 +48,7 @@ public class MeadowApp : App<F7CoreComputeV2>
         benchmarkResults.Add(RunBenchmark(new StarfieldBenchmark()));
         benchmarkResults.Add(RunBenchmark(new FillBenchmark()));
         benchmarkResults.Add(RunBenchmark(new GradientFillBenchmark(), 15));
+        benchmarkResults.Add(RunBenchmark(new SpriteBenchmark()));
     }
 
     void ShowResults()
@@ -96,5 +99,17 @@ public class MeadowApp : App<F7CoreComputeV2>
 
         Console.WriteLine($"   {fps:n2}fps");
         return new BenchmarkResult(benchmark.Name, frames, stopwatch.Elapsed);
+    }
+
+    public static byte[] LoadResource(string filename)
+    {
+        var assembly = Assembly.GetExecutingAssembly();
+        var resourceName = $"ProjectLab_Drawing_Tests.{filename}";
+
+        using Stream stream = assembly.GetManifestResourceStream(resourceName);
+        using var ms = new MemoryStream();
+
+        stream.CopyTo(ms);
+        return ms.ToArray();
     }
 }

@@ -7,7 +7,20 @@
 	<LangVersion>10.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="mspacman2-56.jpg" />
+    <None Remove="mspacman3-56.jpg" />
+    <None Remove="redghost-56.jpg" />
+    <None Remove="redghost2-56.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="mspacman2-56.jpg" />
+    <EmbeddedResource Include="mspacman3-56.jpg" />
+    <EmbeddedResource Include="redghost-56.jpg" />
+    <EmbeddedResource Include="redghost2-56.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Meadow.ProjectLab" Version="1.8.0" />
+    <PackageReference Include="SimpleJpegDecoder" Version="0.4.0" />
   </ItemGroup>
   <ItemGroup>
     <None Update="meadow.config.yaml">
