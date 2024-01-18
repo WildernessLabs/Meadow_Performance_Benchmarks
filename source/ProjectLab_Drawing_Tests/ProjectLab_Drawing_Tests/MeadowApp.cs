@@ -63,6 +63,7 @@ public class MeadowApp : App<F7CoreComputeV2>
     {
         benchmarkResults.Clear();
 
+        benchmarkResults.Add(RunBenchmark(new ShapesBenchmark()));
         benchmarkResults.Add(RunBenchmark(new PathBenchmark()));
         benchmarkResults.Add(RunBenchmark(new PartialShowBenchmark(), 100));
         benchmarkResults.Add(RunBenchmark(new StarfieldBenchmark()));
