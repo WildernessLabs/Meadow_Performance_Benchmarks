@@ -1,7 +1,8 @@
 ﻿using Meadow;
 using Meadow.Foundation.Graphics;
-using ProjectLab_Drawing_Tests;
 using System;
+
+namespace ProjectLab_Drawing_Tests;
 
 internal class PathBenchmark : IBenchmark
 {
@@ -37,6 +38,7 @@ internal class PathBenchmark : IBenchmark
 
             graphics.Show();
         }
+        graphics.Stroke = 1;
     }
 
     void DrawPaths(double offset)

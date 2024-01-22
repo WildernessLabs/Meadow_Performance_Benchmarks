@@ -63,6 +63,7 @@ public class MeadowApp : App<F7CoreComputeV2>
     {
         benchmarkResults.Clear();
 
+        benchmarkResults.Add(RunBenchmark(new PixelBenchmark()));
         benchmarkResults.Add(RunBenchmark(new ShapesBenchmark()));
         benchmarkResults.Add(RunBenchmark(new PathBenchmark()));
         benchmarkResults.Add(RunBenchmark(new PartialShowBenchmark(), 100));
@@ -82,7 +83,7 @@ public class MeadowApp : App<F7CoreComputeV2>
 
         TimeSpan totalElapsed = TimeSpan.Zero;
 
-        int y = 40;
+        int y = 35;
 
         foreach (var result in benchmarkResults)
         {
@@ -113,6 +114,8 @@ public class MeadowApp : App<F7CoreComputeV2>
         Stopwatch stopwatch = new();
 
         Console.WriteLine($"{benchmark.Name}");
+        GC.Collect();
+
         stopwatch.Start();
         benchmark.Run(frames);
         stopwatch.Stop();
