@@ -21,7 +21,7 @@ internal class FillBenchmark : IBenchmark
         for (int frame = 0; frame < numberOfFrames; frame++)
         {
             graphics.Clear(color, true);
-            color = color.WithHue(color.Hue + 0.02);
+            color = color.WithHue(color.Hue + 0.02f);
         }
     }
 }
