@@ -16,6 +16,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MQTTnet", "..\..\..\MQTTnet
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meadow.F7", "..\..\..\Meadow.Core\source\implementations\f7\Meadow.F7\Meadow.F7.csproj", "{B4F9CFE3-722C-4ED2-972F-825D35BA20A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meadow.Logging", "..\..\..\Meadow.Logging\Source\Meadow.Logging\lib\Meadow.Logging.csproj", "{B12A6705-BDFF-4AE5-9C1B-045D60E054A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meadow.Modbus", "..\..\..\Meadow.Modbus\src\Meadow.Modbus\Meadow.Modbus.csproj", "{F1944970-76F0-4EFA-AED8-5432A8114CDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +56,14 @@ Global
 		{B4F9CFE3-722C-4ED2-972F-825D35BA20A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4F9CFE3-722C-4ED2-972F-825D35BA20A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4F9CFE3-722C-4ED2-972F-825D35BA20A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B12A6705-BDFF-4AE5-9C1B-045D60E054A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B12A6705-BDFF-4AE5-9C1B-045D60E054A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B12A6705-BDFF-4AE5-9C1B-045D60E054A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B12A6705-BDFF-4AE5-9C1B-045D60E054A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1944970-76F0-4EFA-AED8-5432A8114CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1944970-76F0-4EFA-AED8-5432A8114CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1944970-76F0-4EFA-AED8-5432A8114CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1944970-76F0-4EFA-AED8-5432A8114CDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +74,8 @@ Global
 		{87802171-9819-45F7-AE9C-E0F021783120} = {36D01C5F-01B0-4C72-8BFD-2F95DD92B58F}
 		{8E30F73E-2F57-453E-969C-AB1B479BB358} = {36D01C5F-01B0-4C72-8BFD-2F95DD92B58F}
 		{B4F9CFE3-722C-4ED2-972F-825D35BA20A7} = {36D01C5F-01B0-4C72-8BFD-2F95DD92B58F}
+		{B12A6705-BDFF-4AE5-9C1B-045D60E054A0} = {36D01C5F-01B0-4C72-8BFD-2F95DD92B58F}
+		{F1944970-76F0-4EFA-AED8-5432A8114CDC} = {36D01C5F-01B0-4C72-8BFD-2F95DD92B58F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {04112AB6-9592-4060-BD8D-231EE21195FC}
