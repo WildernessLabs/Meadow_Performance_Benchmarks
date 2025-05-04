@@ -129,7 +129,7 @@ public class MeadowApp : App<F7CoreComputeV2>
     public static byte[] LoadResource(string filename)
     {
         var assembly = Assembly.GetExecutingAssembly();
-        var resourceName = $"ProjectLab_Drawing_Tests.{filename}";
+        var resourceName = $"ProjectLab_Drawing_Tests_local.{filename}";
 
         using Stream stream = assembly.GetManifestResourceStream(resourceName);
         using var ms = new MemoryStream();
