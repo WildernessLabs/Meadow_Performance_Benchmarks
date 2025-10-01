@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meadow.Core", "..\..\..\Mea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meadow.F7", "..\..\..\Meadow.Core\source\implementations\f7\Meadow.F7\Meadow.F7.csproj", "{06D9A3DA-B857-8922-26EF-809AEBDD154E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sensors.Hid.Xpt2046", "..\..\..\Meadow.Foundation\Source\Meadow.Foundation.Peripherals\Sensors.Hid.Xpt2046\Driver\Sensors.Hid.Xpt2046.csproj", "{7B1A6414-0D2C-1003-1FC9-EB7981099A4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -102,6 +104,12 @@ Global
 		{06D9A3DA-B857-8922-26EF-809AEBDD154E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06D9A3DA-B857-8922-26EF-809AEBDD154E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{06D9A3DA-B857-8922-26EF-809AEBDD154E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7B1A6414-0D2C-1003-1FC9-EB7981099A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B1A6414-0D2C-1003-1FC9-EB7981099A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B1A6414-0D2C-1003-1FC9-EB7981099A4A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7B1A6414-0D2C-1003-1FC9-EB7981099A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B1A6414-0D2C-1003-1FC9-EB7981099A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B1A6414-0D2C-1003-1FC9-EB7981099A4A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,6 +125,7 @@ Global
 		{521C1BB8-DA84-B35E-EC12-9EE152DAD083} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{3DEE4E22-03AE-946D-7BCF-3F320569E5FD} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{06D9A3DA-B857-8922-26EF-809AEBDD154E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{7B1A6414-0D2C-1003-1FC9-EB7981099A4A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {04112AB6-9592-4060-BD8D-231EE21195FC}
