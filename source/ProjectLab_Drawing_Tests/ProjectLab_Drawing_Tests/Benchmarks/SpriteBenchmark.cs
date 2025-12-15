@@ -81,6 +81,6 @@ internal class SpriteBenchmark : IBenchmark
         var decoder = new JpegDecoder();
         var jpg = decoder.DecodeJpeg(jpgData);
 
-        return new BufferRgb888(decoder.Width, decoder.Height, jpg).Convert<BufferRgb565>();
+        return new BufferRgb888(decoder.Width, decoder.Height, jpg).Convert<BufferRgb444>();
     }
 }

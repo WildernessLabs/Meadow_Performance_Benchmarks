@@ -89,11 +89,11 @@ public class MeadowApp : App<F7CoreComputeV2>
 
         TimeSpan totalElapsed = TimeSpan.Zero;
 
-        int y = 16;
+        int y = 28;
 
         foreach (var result in benchmarkResults)
         {
-            Thread.Sleep(100);
+            Thread.Sleep(150);
             totalElapsed += result.Elapsed;
 
             var fps = result.NumberOfFrames / result.Elapsed.TotalSeconds;
@@ -102,7 +102,7 @@ public class MeadowApp : App<F7CoreComputeV2>
             graphics.DrawText(315, y, $"{fps:n2}fps", Color.LawnGreen, alignmentH: HorizontalAlignment.Right);
             graphics.Show();
 
-            y += 12;
+            y += 13;
         }
 
         Thread.Sleep(250);
