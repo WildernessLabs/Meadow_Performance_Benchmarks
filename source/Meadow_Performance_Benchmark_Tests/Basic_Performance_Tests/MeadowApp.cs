@@ -1,24 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading;
+﻿using System.Threading.Tasks;
 using Meadow;
 using Meadow.Devices;
-using Meadow.Hardware;
 
 namespace Basic_Performance_Tests
 {
-    public class MeadowApp : App<F7Micro, MeadowApp>
+    public class MeadowApp : App<F7FeatherV2>
     {
-        public MeadowApp()
+        public override Task Run()
         {
-            Console.WriteLine("App Up");
             ListOperations.RunIntegerListTests();
             DigitalOutputOperations.RunDigitalOutputTests();
             SoftPwmPerformanceTests.RunSoftPwmTests();
             PiCalculationTests.CalculateTo(50);
             PiCalculationTests.CalculateTo(100);
             PiCalculationTests.CalculateTo(150);
+            JsonTests.RunJsonTests();
+            return base.Run();
         }
-
     }
 }
