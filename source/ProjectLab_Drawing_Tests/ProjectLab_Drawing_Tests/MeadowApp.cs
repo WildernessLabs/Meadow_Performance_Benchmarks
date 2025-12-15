@@ -142,7 +142,7 @@ public class MeadowApp : App<F7CoreComputeV2>
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Benchmark {benchmark.Name} failed: {ex.Message}");
+            Console.WriteLine($"Benchmark {benchmark.Name} failed ({ex.GetType().Name}): {ex.Message}");
             return new BenchmarkResult(benchmark.Name, frames, TimeSpan.Zero, false);
         }
     }

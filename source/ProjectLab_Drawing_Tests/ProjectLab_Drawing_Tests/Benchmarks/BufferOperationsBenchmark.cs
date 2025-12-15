@@ -8,6 +8,9 @@ namespace ProjectLab_Drawing_Tests;
 
 internal class BufferOperationsBenchmark : IBenchmark
 {
+    private const int BufferWidth = 80;
+    private const int BufferHeight = 60;
+
     public string Name => "BufferOps";
 
     private MicroGraphics graphics;
@@ -19,30 +22,30 @@ internal class BufferOperationsBenchmark : IBenchmark
         graphics = Graphics ?? throw new ArgumentNullException(nameof(Graphics));
 
         // Create small buffers for testing
-        buffer1 = new BufferRgb888(80, 60);
-        buffer2 = new BufferRgb888(80, 60);
+        buffer1 = new BufferRgb888(BufferWidth, BufferHeight);
+        buffer2 = new BufferRgb888(BufferWidth, BufferHeight);
 
         // Fill buffer1 with a gradient pattern
-        for (int y = 0; y < 60; y++)
+        for (int y = 0; y < BufferHeight; y++)
         {
-            for (int x = 0; x < 80; x++)
+            for (int x = 0; x < BufferWidth; x++)
             {
-                byte r = (byte)((x * 255) / 80);
-                byte g = (byte)((y * 255) / 60);
-                byte b = (byte)(((x + y) * 255) / 140);
+                byte r = (byte)((x * 255) / BufferWidth);
+                byte g = (byte)((y * 255) / BufferHeight);
+                byte b = (byte)(((x + y) * 255) / (BufferWidth + BufferHeight));
                 var color = Color.FromRgb(r, g, b);
                 buffer1.SetPixel(x, y, color);
             }
         }
 
         // Fill buffer2 with a different pattern
-        for (int y = 0; y < 60; y++)
+        for (int y = 0; y < BufferHeight; y++)
         {
-            for (int x = 0; x < 80; x++)
+            for (int x = 0; x < BufferWidth; x++)
             {
-                byte r = (byte)(255 - (x * 255) / 80);
-                byte g = (byte)(128 + (y * 127) / 60);
-                byte b = (byte)((x * 255) / 80);
+                byte r = (byte)(255 - (x * 255) / BufferWidth);
+                byte g = (byte)(128 + (y * 127) / BufferHeight);
+                byte b = (byte)((x * 255) / BufferWidth);
                 var color = Color.FromRgb(r, g, b);
                 buffer2.SetPixel(x, y, color);
             }
