@@ -109,21 +109,36 @@ public class MeadowApp : App<F7CoreComputeV2>
 
     BenchmarkResult RunBenchmark(IBenchmark benchmark, int frames = 40)
     {
-        benchmark.Initialize(graphics);
+        try
+        {
+            benchmark.Initialize(graphics);
 
-        Stopwatch stopwatch = new();
+            Stopwatch stopwatch = new();
 
-        Console.WriteLine($"{benchmark.Name}");
-        GC.Collect();
+            Console.WriteLine($"{benchmark.Name}");
+            
+            // Warmup
+            benchmark.Run(1);
+            GC.Collect();
 
-        stopwatch.Start();
-        benchmark.Run(frames);
-        stopwatch.Stop();
+            // Actual benchmark
+            stopwatch.Start();
+            benchmark.Run(frames);
+            stopwatch.Stop();
 
-        var fps = frames / stopwatch.Elapsed.TotalSeconds;
+            var fps = frames / stopwatch.Elapsed.TotalSeconds;
 
-        Console.WriteLine($"   {fps:n2}fps");
-        return new BenchmarkResult(benchmark.Name, frames, stopwatch.Elapsed);
+            Console.WriteLine($"   {fps:n2}fps");
+            
+            benchmark.Cleanup();
+            
+            return new BenchmarkResult(benchmark.Name, frames, stopwatch.Elapsed, true);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Benchmark {benchmark.Name} failed: {ex.Message}");
+            return new BenchmarkResult(benchmark.Name, frames, TimeSpan.Zero, false);
+        }
     }
 
     public static byte[] LoadResource(string filename)
