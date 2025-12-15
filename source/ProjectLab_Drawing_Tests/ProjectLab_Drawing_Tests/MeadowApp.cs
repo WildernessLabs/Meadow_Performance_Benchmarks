@@ -71,6 +71,12 @@ public class MeadowApp : App<F7CoreComputeV2>
         benchmarkResults.Add(RunBenchmark(new FillBenchmark()));
         benchmarkResults.Add(RunBenchmark(new GradientFillBenchmark(), 15));
         benchmarkResults.Add(RunBenchmark(new SpriteBenchmark()));
+        // New benchmarks
+        benchmarkResults.Add(RunBenchmark(new TextBenchmark()));
+        benchmarkResults.Add(RunBenchmark(new LineBenchmark()));
+        benchmarkResults.Add(RunBenchmark(new ArcBenchmark()));
+        benchmarkResults.Add(RunBenchmark(new RotationBenchmark()));
+        benchmarkResults.Add(RunBenchmark(new BufferOperationsBenchmark()));
     }
 
     void ShowResults()
