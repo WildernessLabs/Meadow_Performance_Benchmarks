@@ -83,6 +83,4 @@ internal class BufferOperationsBenchmark : IBenchmark
             graphics.Show();
         }
     }
-
-
 }

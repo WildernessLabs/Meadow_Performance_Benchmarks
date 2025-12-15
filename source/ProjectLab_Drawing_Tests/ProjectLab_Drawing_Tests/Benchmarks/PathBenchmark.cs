@@ -38,6 +38,11 @@ internal class PathBenchmark : IBenchmark
 
             graphics.Show();
         }
+    }
+
+    public void Cleanup()
+    {
+        // Reset stroke to default
         graphics.Stroke = 1;
     }
 
