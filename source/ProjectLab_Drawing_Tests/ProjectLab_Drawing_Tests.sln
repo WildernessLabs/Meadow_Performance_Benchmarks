@@ -1,10 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.32014.148
+# Visual Studio Version 18
+VisualStudioVersion = 18.1.11304.174 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectLab_Drawing_Tests", "ProjectLab_Drawing_Tests\ProjectLab_Drawing_Tests.csproj", "{FCAA1A58-2FB8-4863-AD79-1A7FC8656E50}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectLab_Drawing_Tests_local", "ProjectLab_Drawing_Tests\ProjectLab_Drawing_Tests_local.csproj", "{93FCAEFC-7D3F-2D15-8869-F287A2FE7D2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectLab_Drawing_Tests", "ProjectLab_Drawing_Tests\ProjectLab_Drawing_Tests.csproj", "{93FCAEFC-7D3F-2D15-8869-F287A2FE7D2D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -36,10 +34,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FCAA1A58-2FB8-4863-AD79-1A7FC8656E50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FCAA1A58-2FB8-4863-AD79-1A7FC8656E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FCAA1A58-2FB8-4863-AD79-1A7FC8656E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FCAA1A58-2FB8-4863-AD79-1A7FC8656E50}.Release|Any CPU.Build.0 = Release|Any CPU
 		{93FCAEFC-7D3F-2D15-8869-F287A2FE7D2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{93FCAEFC-7D3F-2D15-8869-F287A2FE7D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93FCAEFC-7D3F-2D15-8869-F287A2FE7D2D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU

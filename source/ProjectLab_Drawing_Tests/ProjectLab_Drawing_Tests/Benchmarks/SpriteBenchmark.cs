@@ -3,6 +3,7 @@ using Meadow.Foundation.Graphics;
 using Meadow.Foundation.Graphics.Buffers;
 using Meadow.Peripherals.Displays;
 using SimpleJpegDecoder;
+using System;
 
 namespace ProjectLab_Drawing_Tests;
 
@@ -32,7 +33,7 @@ internal class SpriteBenchmark : IBenchmark
 
     public void Initialize(MicroGraphics Graphics)
     {
-        graphics = Graphics;
+        graphics = Graphics ?? throw new ArgumentNullException(nameof(Graphics));
 
         pacmanX = xPacmanStart;
         pacmanY = y;
@@ -80,6 +81,6 @@ internal class SpriteBenchmark : IBenchmark
         var decoder = new JpegDecoder();
         var jpg = decoder.DecodeJpeg(jpgData);
 
-        return new BufferRgb888(decoder.Width, decoder.Height, jpg).Convert<BufferRgb565>();
+        return new BufferRgb888(decoder.Width, decoder.Height, jpg).Convert<BufferRgb444>();
     }
 }
