@@ -71,9 +71,9 @@ Initializes three `DigitalOutputPort` instances, one for each of the onboard LED
 
 Alternate states to 3 Digital Output ports in 100 cycles. 
 
-| Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** | **RC-3** | **3.0-preview** |
-|------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|----------|-----------------|
-| 300 writes             | `48000ms`   `13000ms` | `150ms`   | `1400ms`  | `1330ms`  | `150ms`    | `140ms`    | `140ms`    | `50ms`         | `50ms`   | `54ms`   | `5ms`           |
+| Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** | **RC-3** | **3.0-preview** | **3.0-preview (raw BSRR)** |
+|------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|----------|-----------------|----------------------------|
+| 300 writes             | `48000ms`   `13000ms` | `150ms`   | `1400ms`  | `1330ms`  | `150ms`    | `140ms`    | `140ms`    | `50ms`         | `50ms`   | `54ms`   | `5ms`           | `1ms`                      |
 
 **NOTE**: Due to the drastic change of performance for this benchmark going from 4800 milliseconds (or 4.8 seconds) to 50 milliseconds (or 0.05 seconds), the graph below is expressed on a **logarithmic scale**.
 
@@ -83,9 +83,9 @@ Alternate states to 3 Digital Output ports in 100 cycles.
 
 Average time calculated between creating and writing on the digital output ports. 
 
-| Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** | **RC-3** | **3.0-preview** |
-|------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|----------|-----------------|
-| Avg time per write     | `159ms`   | `42ms`    | `0.5ms`   | `0.5ms`   | `0.44ms`  | `0.51ms`   | `0.46ms`   | `0.47ms`   | `0.16ms`       | `0.17ms` | `0.18ms` | `0.017ms`       |
+| Operation              | **b3.5**  | **b3.6**  | **b3.7**  | **b4.3**  | **b5.1**  | **b6.0.1** | **b6.3**   | **RC1**    | **RC1 w/ JIT** | **RC-2** | **RC-3** | **3.0-preview** | **3.0-preview (raw BSRR)** |
+|------------------------|-----------|-----------|-----------|-----------|-----------|------------|------------|------------|----------------|----------|----------|-----------------|----------------------------|
+| Avg time per write     | `159ms`   | `42ms`    | `0.5ms`   | `0.5ms`   | `0.44ms`  | `0.51ms`   | `0.46ms`   | `0.47ms`   | `0.16ms`       | `0.17ms` | `0.18ms` | `0.017ms`       | `0.003ms`                  |
 
 **NOTE**: Due to the drastic change of performance for this benchmark going from 159 milliseconds to 0.17 milliseconds, the graph below is expressed on a **logarithmic scale**.
 
@@ -104,3 +104,5 @@ Generates a PWM signal in software. Currently is a visual test. Run the test and
 ## Methodology Notes
 
 **3.0-preview**: .NET 10 Mono runtime (Meadow.OS `2.999.2.2`) on `F7CoreComputeV2` in a `ProjectLab V5`, Release build of both the native runtime and the managed app. The benchmark project was bumped from `Meadow.Sdk/1.1.0` / `netstandard2.1` / `App<F7FeatherV1>` to `Microsoft.NET.Sdk` / `net10.0` / `App<F7CoreComputeV2>`, and the three `OnboardLedRed/Green/Blue` pin references in the Digital Output and Soft PWM tests were retargeted to free F7CC pins (`PA0`, `PA3`, `PA9`); the test logic is otherwise unchanged. Soft PWM max frequency requires visual / scope inspection — `_TBD_` until measured. The dedicated GPIO microbenchmark in the `Meadow` repo (`F7DigitalOutputPort` fast path) reports ~`0.26µs` per `State =` write in a tight 200k-iteration loop; this benchmark's `0.017ms` (≈`17µs`) per write reflects the same path under the README's short 300-iteration / 3-distinct-port test pattern, which has less JIT warm-up and fewer inlining opportunities.
+
+**3.0-preview (raw BSRR)**: Same 100×3 alternation as the standard "300 writes" measurement, but written through `F7DigitalOutputPort.GetRawWriteHandle(out uint* bsrr, out uint setMask, out uint clearMask)` — a new escape hatch in Meadow.Core that hands back a pointer to the STM32 BSRR register and the set/clear masks for the pin. The hot loop becomes three back-to-back register stores per iteration with no virtual dispatch and no `_state` field maintenance. `Stopwatch`'s ~`1ms` resolution caps measurement at the low end; the 200k-iteration GPIO microbenchmark in the `Meadow` repo resolves the raw path at closer to `45ns`/write (≈`22 MHz` square wave when unrolled). The relative `~5×` advantage over the managed `State =` path on the same hardware with the same loop shape is the headline; the absolute number is bounded by timer granularity.
