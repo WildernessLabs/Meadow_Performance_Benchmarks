@@ -21,10 +21,11 @@ namespace Basic_Performance_Tests
 
             stopwatch.Start();
 
-            // init some ports
-            IDigitalOutputPort red = MeadowApp.Device.CreateDigitalOutputPort(MeadowApp.Device.Pins.OnboardLedRed);
-            IDigitalOutputPort green = MeadowApp.Device.CreateDigitalOutputPort(MeadowApp.Device.Pins.OnboardLedGreen);
-            IDigitalOutputPort blue = MeadowApp.Device.CreateDigitalOutputPort(MeadowApp.Device.Pins.OnboardLedBlue);
+            // init some ports — F7CoreComputeV2 doesn't expose OnboardLedRGB
+            // pins like the Feather did, so use three arbitrary free GPIOs.
+            IDigitalOutputPort red = MeadowApp.Device.CreateDigitalOutputPort(MeadowApp.Device.Pins.PA0);
+            IDigitalOutputPort green = MeadowApp.Device.CreateDigitalOutputPort(MeadowApp.Device.Pins.PA3);
+            IDigitalOutputPort blue = MeadowApp.Device.CreateDigitalOutputPort(MeadowApp.Device.Pins.PA9);
 
             elapsedTimePortsCreated = stopwatch.ElapsedMilliseconds;
 

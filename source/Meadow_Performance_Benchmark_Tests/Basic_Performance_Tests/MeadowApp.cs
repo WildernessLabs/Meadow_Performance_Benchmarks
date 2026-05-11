@@ -1,11 +1,14 @@
-﻿using Meadow;
+using Meadow;
 using Meadow.Devices;
 using System;
 using System.Threading.Tasks;
 
 namespace Basic_Performance_Tests
 {
-    public class MeadowApp : App<F7FeatherV1>
+    // Original was App<F7FeatherV1>; bumped to F7CoreComputeV2 so this runs on
+    // the ProjectLab + .NET 10 Mono builds we're benchmarking against the
+    // legacy 2.x numbers in the README.
+    public class MeadowApp : App<F7CoreComputeV2>
     {
         public override Task Run()
         {
@@ -16,8 +19,14 @@ namespace Basic_Performance_Tests
             PiCalculationTests.CalculateTo(50);
             PiCalculationTests.CalculateTo(100);
             PiCalculationTests.CalculateTo(150);
+            Console.WriteLine("=== BENCH DONE ===");
 
-            return base.Run();
+            int beat = 0;
+            while (true)
+            {
+                Console.WriteLine($"BEAT {beat++}");
+                System.Threading.Thread.Sleep(2000);
+            }
         }
     }
 }
