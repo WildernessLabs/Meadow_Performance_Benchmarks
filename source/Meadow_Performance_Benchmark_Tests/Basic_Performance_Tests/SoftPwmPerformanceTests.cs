@@ -12,7 +12,7 @@ namespace Basic_Performance_Tests
 
         public static void RunSoftPwmTests()
         {
-            IDigitalOutputPort digitalOut = MeadowApp.Device.CreateDigitalOutputPort(MeadowApp.Device.Pins.OnboardLedGreen);
+            IDigitalOutputPort digitalOut = MeadowApp.Device.CreateDigitalOutputPort(MeadowApp.Device.Pins.PA3);
             SoftPwmPort softPwmPort = new SoftPwmPort(digitalOut);
 
             // 50% duty cycle
