@@ -8,4 +8,5 @@ internal interface IBenchmark
 
     public void Initialize(MicroGraphics Graphics);
     public void Run(int numberOfFrames);
+    public void Cleanup() { }  // Default empty implementation for resource cleanup
 }

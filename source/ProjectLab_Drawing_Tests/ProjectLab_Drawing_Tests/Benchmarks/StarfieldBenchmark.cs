@@ -20,7 +20,7 @@ internal class StarfieldBenchmark : IBenchmark
 
     public void Initialize(MicroGraphics Graphics)
     {
-        graphics = Graphics;
+        graphics = Graphics ?? throw new ArgumentNullException(nameof(Graphics));
 
         random = new Random(0); //forced standard seed
 

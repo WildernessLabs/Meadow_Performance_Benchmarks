@@ -1,5 +1,6 @@
 ﻿using Meadow;
 using Meadow.Foundation.Graphics;
+using System;
 
 namespace ProjectLab_Drawing_Tests;
 
@@ -11,7 +12,7 @@ internal class ShapesBenchmark : IBenchmark
 
     public void Initialize(MicroGraphics Graphics)
     {
-        graphics = Graphics;
+        graphics = Graphics ?? throw new ArgumentNullException(nameof(Graphics));
     }
 
     public void Run(int numberOfFrames)

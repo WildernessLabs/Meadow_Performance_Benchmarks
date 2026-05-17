@@ -71,23 +71,29 @@ public class MeadowApp : App<F7CoreComputeV2>
         benchmarkResults.Add(RunBenchmark(new FillBenchmark()));
         benchmarkResults.Add(RunBenchmark(new GradientFillBenchmark(), 15));
         benchmarkResults.Add(RunBenchmark(new SpriteBenchmark()));
+        // New benchmarks
+        benchmarkResults.Add(RunBenchmark(new TextBenchmark()));
+        benchmarkResults.Add(RunBenchmark(new LineBenchmark()));
+        benchmarkResults.Add(RunBenchmark(new ArcBenchmark()));
+        benchmarkResults.Add(RunBenchmark(new RotationBenchmark()));
+        benchmarkResults.Add(RunBenchmark(new BufferOperationsBenchmark()));
     }
 
     void ShowResults()
     {
         graphics.Clear();
-        graphics.CurrentFont = new Font8x12();
+        graphics.CurrentFont = new Font8x8();
 
         graphics.DrawText(5, 2, "Results", Color.LawnGreen);
         graphics.Show();
 
         TimeSpan totalElapsed = TimeSpan.Zero;
 
-        int y = 35;
+        int y = 28;
 
         foreach (var result in benchmarkResults)
         {
-            Thread.Sleep(250);
+            Thread.Sleep(150);
             totalElapsed += result.Elapsed;
 
             var fps = result.NumberOfFrames / result.Elapsed.TotalSeconds;
@@ -96,11 +102,11 @@ public class MeadowApp : App<F7CoreComputeV2>
             graphics.DrawText(315, y, $"{fps:n2}fps", Color.LawnGreen, alignmentH: HorizontalAlignment.Right);
             graphics.Show();
 
-            y += 20;
+            y += 13;
         }
 
         Thread.Sleep(250);
-        y += 30;
+        y += 16;
         graphics.DrawText(5, y, "Total time", Color.LawnGreen);
         graphics.DrawText(315, y, $"{totalElapsed.TotalSeconds:n2}s", Color.LawnGreen, alignmentH: HorizontalAlignment.Right);
 
@@ -109,27 +115,42 @@ public class MeadowApp : App<F7CoreComputeV2>
 
     BenchmarkResult RunBenchmark(IBenchmark benchmark, int frames = 40)
     {
-        benchmark.Initialize(graphics);
+        try
+        {
+            benchmark.Initialize(graphics);
 
-        Stopwatch stopwatch = new();
+            Stopwatch stopwatch = new();
 
-        Console.WriteLine($"{benchmark.Name}");
-        GC.Collect();
+            Console.WriteLine($"{benchmark.Name}");
+            
+            // Warmup
+            benchmark.Run(1);
+            GC.Collect();
 
-        stopwatch.Start();
-        benchmark.Run(frames);
-        stopwatch.Stop();
+            // Actual benchmark
+            stopwatch.Start();
+            benchmark.Run(frames);
+            stopwatch.Stop();
 
-        var fps = frames / stopwatch.Elapsed.TotalSeconds;
+            var fps = frames / stopwatch.Elapsed.TotalSeconds;
 
-        Console.WriteLine($"   {fps:n2}fps");
-        return new BenchmarkResult(benchmark.Name, frames, stopwatch.Elapsed);
+            Console.WriteLine($"   {fps:n2}fps");
+            
+            benchmark.Cleanup();
+            
+            return new BenchmarkResult(benchmark.Name, frames, stopwatch.Elapsed, true);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Benchmark {benchmark.Name} failed ({ex.GetType().Name}): {ex.Message}");
+            return new BenchmarkResult(benchmark.Name, frames, TimeSpan.Zero, false);
+        }
     }
 
     public static byte[] LoadResource(string filename)
     {
         var assembly = Assembly.GetExecutingAssembly();
-        var resourceName = $"ProjectLab_Drawing_Tests_local.{filename}";
+        var resourceName = $"ProjectLab_Drawing_Tests.{filename}";
 
         using Stream stream = assembly.GetManifestResourceStream(resourceName);
         using var ms = new MemoryStream();
